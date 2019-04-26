@@ -1,0 +1,61 @@
+create table  doctor_details
+(
+ fname varchar2(15)not null,
+ lname varchar2(15),
+ age number(3),
+ contact_no number(10),
+ reg_id varchar2(25),
+ gender varchar2(10),
+ city varchar2(15),
+ state varchar2(20),
+ password varchar2(20),
+ user_id varchar2(10) Primary key,
+SECURITY_QUESTION varchar2(30),
+SECURITY_ANSWER varchar2(30)
+);	
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________
+create table  user_details
+(
+ fname varchar2(15)not null,
+ lname varchar2(15),
+ age number(3),
+ contact_no number(10),
+ email_id varchar2(25),
+ gender varchar2(10),
+ city varchar2(15),
+ state varchar2(20),
+ password varchar2(20),
+ user_id varchar2(10) Primary key,
+SECURITY_QUESTION varchar2(30),
+SECURITY_ANSWER varchar2(30)
+);	
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________
+ create table bmi_values
+    (
+	user_id varchar2(10) references user_details(user_id),
+    	height number(10,2),
+    	weight number(10,2),
+    	bmi number(10,2),
+ 	time varchar2(20),
+	localdate date
+    );
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________
+ create table glucose_values
+    (
+    user_id varchar2(10) references user_details(user_id),
+    time varchar2(10),
+     bgl number(10,2)
+    LOCALDATE Date);
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________
+ create table bloodcount_values
+    (
+    user_id varchar2(10) references user_details(user_id),
+    wbc number(10,2),
+    rbc number(10,2),
+	platlets number(10,2),
+	cTime varchar2(10),
+	cDate Date
+	);
+
+
+
