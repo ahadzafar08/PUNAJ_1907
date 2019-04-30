@@ -1,3 +1,87 @@
+													TABLE DESCRIPTION
+
+
+SQL> desc user_details;
+ Name                                                                                                                  Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------- -------- ------------------------------------------------------------------------------------
+ FNAME                                                                                                                 NOT NULL VARCHAR2(15)
+ LNAME                                                                                                                          VARCHAR2(15)
+ AGE                                                                                                                            NUMBER(3)
+ CONTACT_NO                                                                                                                     NUMBER(10)
+ EMAIL_ID                                                                                                                       VARCHAR2(25)
+ GENDER                                                                                                                         VARCHAR2(10)
+ CITY                                                                                                                           VARCHAR2(15)
+ STATE                                                                                                                          VARCHAR2(20)
+ PASSWORD                                                                                                                       VARCHAR2(20)
+ USER_ID                                                                                                               NOT NULL VARCHAR2(10)
+ SECURITY_QUESTION                                                                                                              VARCHAR2(30)
+ SECURITY_ANSWER                                                                                                                VARCHAR2(30)
+
+SQL> desc doctor_details;
+ Name                                                                                                                  Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------- -------- ------------------------------------------------------------------------------------
+ FNAME                                                                                                                 NOT NULL VARCHAR2(15)
+ LNAME                                                                                                                          VARCHAR2(15)
+ AGE                                                                                                                            NUMBER(3)
+ CONTACT_NO                                                                                                                     NUMBER(10)
+ REG_ID                                                                                                                         VARCHAR2(25)
+ GENDER                                                                                                                         VARCHAR2(10)
+ CITY                                                                                                                           VARCHAR2(15)
+ STATE                                                                                                                          VARCHAR2(20)
+ PASSWORD                                                                                                                       VARCHAR2(20)
+ USER_ID                                                                                                               NOT NULL VARCHAR2(10)
+ SECURITY_QUESTION                                                                                                              VARCHAR2(30)
+ SECURITY_ANSWER                                                                                                                VARCHAR2(30)
+
+SQL> desc bmi_values;
+ Name                                                                                                                  Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------- -------- ------------------------------------------------------------------------------------
+ USER_ID                                                                                                                        VARCHAR2(10)
+ HEIGHT                                                                                                                         NUMBER(10,2)
+ WEIGHT                                                                                                                         NUMBER(10,2)
+ BMI                                                                                                                            NUMBER(10,2)
+ TIME                                                                                                                           VARCHAR2(20)
+ LOCALDATE                                                                                                                      DATE
+
+SQL> desc glucose_values;
+ Name                                                                                                                  Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------- -------- ------------------------------------------------------------------------------------
+ USER_ID                                                                                                                        VARCHAR2(10)
+ TIME                                                                                                                           VARCHAR2(10)
+ BGL                                                                                                                            NUMBER(10,2)
+ LOCALDATE                                                                                                                      DATE
+
+SQL> desc bloodcount_values;
+ Name                                                                                                                  Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------- -------- ------------------------------------------------------------------------------------
+ USER_ID                                                                                                                        VARCHAR2(10)
+ WBC                                                                                                                            NUMBER(10,2)
+ RBC                                                                                                                            NUMBER(10,2)
+ PLATLETS                                                                                                                       NUMBER(10,2)
+ CTIME                                                                                                                          VARCHAR2(10)
+ CDATE                                                                                                                          DATE
+
+SQL> desc reg_doctors;
+ Name                                                                                                                  Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------- -------- ------------------------------------------------------------------------------------
+ REG_NO                                                                                                                         VARCHAR2(25)
+
+
+
+
+
+
+
+
+
+
+
+
+													TABLE CREATION
+
+
+
+
 create table  doctor_details
 (
  fname varchar2(15)not null,
@@ -44,18 +128,49 @@ ________________________________________________________________________________
     (
     user_id varchar2(10) references user_details(user_id),
     time varchar2(10),
-     bgl number(10,2)
+     bgl number(10,2),
     LOCALDATE Date);
 _________________________________________________________________________________________________________________________________________________________________________________________________________________________
  create table bloodcount_values
     (
-    user_id varchar2(10) references user_details(user_id),
+    user_id varchar2(10) references  user_details(user_id),
     wbc number(10,2),
     rbc number(10,2),
 	platlets number(10,2),
 	cTime varchar2(10),
 	cDate Date
 	);
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________
+create table reg_doctors(
+reg_no varchar2(25) );
 
-
-
+insert into reg_doctors values('123456789001');
+insert into reg_doctors values('123456789002');
+insert into reg_doctors values('123456789003');
+insert into reg_doctors values('123456789004');
+insert into reg_doctors values('123456789005');
+insert into reg_doctors values('123456789006');
+insert into reg_doctors values('123456789007');
+insert into reg_doctors values('123456789008');
+insert into reg_doctors values('123456789009');
+insert into reg_doctors values('123456789010');
+insert into reg_doctors values('123456789011');
+insert into reg_doctors values('123456789012');
+insert into reg_doctors values('123456789013');
+insert into reg_doctors values('123456789014');
+insert into reg_doctors values('123456789015');
+insert into reg_doctors values('123456789016');
+insert into reg_doctors values('123456789017');
+insert into reg_doctors values('123456789018');
+insert into reg_doctors values('123456789019');
+insert into reg_doctors values('123456789020');
+insert into reg_doctors values('123456789021');
+insert into reg_doctors values('123456789022');
+insert into reg_doctors values('123456789023');
+insert into reg_doctors values('123456789024');
+insert into reg_doctors values('123456789025');
+insert into reg_doctors values('123456789026');
+insert into reg_doctors values('123456789027');
+insert into reg_doctors values('123456789028');
+insert into reg_doctors values('123456789029');
+insert into reg_doctors values('123456789030');
